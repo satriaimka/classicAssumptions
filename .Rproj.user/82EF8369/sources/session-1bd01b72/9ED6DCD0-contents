@@ -1,0 +1,20 @@
+Package: classicAssumptions
+Type: Package
+Title: Uji Asumsi Klasik untuk Regresi Linear
+Version: 1.0.0
+Author: Your Name
+Maintainer: Your Name <your.email@example.com>
+Description: Package untuk melakukan uji asumsi klasik (normalitas, homoskedastisitas, 
+    autokorelasi, multikolinearitas) dengan transformasi otomatis.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    stats,
+    car,
+    lmtest,
+    nortest,
+    tseries,
+    graphics,
+    utils
+RoxygenNote: 7.3.2

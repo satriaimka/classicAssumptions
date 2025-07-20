@@ -1,0 +1,30 @@
+# Export functions
+export(uji_normalitas)
+export(uji_homoskedastisitas)
+export(uji_autokorelasi)
+export(uji_multikolinearitas)
+export(uji_asumsi_klasik)
+export(transformasi_otomatis)
+export(diagnostic_plots)
+export(model_info)
+export(generate_report)
+
+# S3 methods
+S3method(print, uji_normalitas)
+S3method(print, uji_homoskedastisitas)
+S3method(print, uji_autokorelasi)
+S3method(print, uji_multikolinearitas)
+S3method(print, transformasi_hasil)
+S3method(print, uji_asumsi_klasik_hasil)
+S3method(print, model_info)
+
+# Import from other packages
+importFrom(stats, lm, residuals, fitted, shapiro.test, ks.test, cor, nobs, 
+           model.matrix, pchisq, Box.test, acf, pacf, AIC, BIC, coef, formula)
+importFrom(car, vif)
+importFrom(lmtest, bptest, dwtest, bgtest, gqtest)
+importFrom(nortest, ad.test)
+importFrom(tseries, jarque.bera.test, runs.test)
+importFrom(graphics, plot, hist, curve, qqnorm, qqline, boxplot, abline, 
+           barplot, image, axis, par)
+importFrom(utils, writeLines)

@@ -1,0 +1,35 @@
+library(haven)
+library(classicAssumptions)
+
+data <- read_sav("D:/STIS/Semester 4/Analisis Regresi/UAS 2025/UAS 2025 R/2023.sav")
+
+Y <- data$Y
+X1 <- data$X1
+Xd <- data$Xd
+
+model <- lm(Y ~ X1+Xd, data=data)
+
+hasil <- uji_asumsi_klasik(model)
+print(hasil)
+
+hasil$normalitas
+hasil$autokorelasi
+hasil$summary
+hasil$model_original
+hasil$multikolinearitas
+hasil$homoskedastisitas
+
+transformasi_otomatis(
+  data = data,
+  formula = Y~X1+Xd,
+  alpha = 0.05,
+  verbose = TRUE
+)
+
+Y_n <- log(Y)
+X1_n <- log(X1)
+Xd_n <- log(Xd)
+
+model_trans <- lm(Y_n~X1_n+Xd, data=data)
+
+uji_asumsi_klasik(model_trans)
