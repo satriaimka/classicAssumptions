@@ -1,0 +1,10 @@
+library(pemilihan.model)
+
+data_path<-Data_Regresi08
+Y<-Data_Regresi08$Y
+X1<-Data_Regresi08$X1
+X2<-Data_Regresi08$X2
+X3<-Data_Regresi08$X3
+
+model<-lm( Y ~ X1 + X2 + X3, data = data_path)
+model_terbaik <- pemilihan.model::pilih_model(model, method = "")
